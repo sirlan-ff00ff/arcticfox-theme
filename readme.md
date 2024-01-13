@@ -3,6 +3,8 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 ![scrrenshot](arcticfox-screenshot.png)  
 [a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
 
+**right now doesn't work well with private windows (will fix later)** (in private windows the sidebar is hidden by default, you can enable it with ctrl + h and then changing to the sidebery sidebar, also the 'private window' text covers the browser toolbar buttons)
+
 ---
 
 ℹ️ **addons to use**
