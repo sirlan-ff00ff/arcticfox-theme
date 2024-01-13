@@ -1,6 +1,7 @@
 # arcticfox theme
 a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc  
-![scrrenshot](arcticfox-screenshot.png)
+![scrrenshot](arcticfox-screenshot.png)  
+[a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
 
 ---
 
@@ -9,7 +10,7 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 - [sidebery](https://github.com/mbnuqw/sidebery) for sidebar tabs, workspaces, groups...
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers) for multiple logins
 - [Userchrome Toggle](https://addons.mozilla.org/en-GB/firefox/addon/userchrome-toggle) for toggling keeping the sidebar open (migh try creating an extensions for extra controls later, idk)
-- (preference) [Firefox Color](https://addons.mozilla.org/en-GB/firefox/addon/firefox-color/)
+- (preference) themes from [Firefox Color](https://addons.mozilla.org/en-GB/firefox/addon/firefox-color/)
 
 # how to install
 
