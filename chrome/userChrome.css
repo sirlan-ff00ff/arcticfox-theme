@@ -1,0 +1,376 @@
+/* # Arcticfox - userChrome
+   - under MPL 2.0
+
+  dragon's (very hacky) arc-like theme for firefox
+  ft. sidebery, userchrome-toggle, and firefox color
+
+  !!! for the theme to work:
+  - the side bar needs to always be visible
+    and with Sidebery (maybe TST but nothing guaranteed) opened
+  - the order of the toolbar widgets should be:
+    [url-bar sidebar-toggle-button back forward reload spacer extensions overflow hamburger-menu]
+    you can change the order of some of those, but the url bar must be the first item
+  - preferencially have userchrome-toggle addon or something else to toggle keeping the
+    sidebar opened
+  - disable the bookmarks toolbar
+  - use flat color themes instead of ones with gradients or backgrounds, preferencially
+    themes from Firefox Color
+
+  when navigating this file you can use ctrl + f
+  (or whatever the 'find' shortuc is on your editor)
+  to jump to spefic parts:
+
+  ## for sections
+  // for comments
+  ** for thing you can change
+
+  !!! some extra warnings (drawbacks)
+  - the menu bar (activated with Alt) doesn't work
+  - the bookmarks toolbar doesn't work'
+  - the 'customise toolbar...' page will not let you rearrange
+    things in the toolbar, do it with the theme disabled
+    (I can put in the overflow menu tho)
+  - there will be visual glitches in certain areas, for example
+    in some places the background be be transparent (showing behind the window)
+    and flicker!!
+  - pages and addons that expect ui elements to be in certain places may nor work
+  - some browser themes may not work well or need some tweak
+  - some menus you open (or change the addon in the sidebar) may toggle off the
+    window preface and not keep the sidebar open
+  - using addons that use the sidebar (for example firefox side view) is awkard
+  - might not work depending on your window controls
+
+*/
+
+:root {
+  /* ** spacing around the web page and other things */
+  --spacing: .75rem;
+
+  /* ** sidebar width when open */
+  --sdb-wdt-max: 360px;
+
+  /* // sidebar width (don't change this setup) */
+  /* --sdb-wdt: var(--sdb-wdt-max); */
+  --sdb-wdt: 0;
+
+  /* ** theme border radius */
+  --br: calc(7.5px * 1.5);
+
+  /* **? height of the toolbox (browser header/tool bar) */
+  --toolbox-height: 6.25rem;
+
+  /* ** transitions (mainly sidebar) speed */
+  --trans: .5s;
+
+  /* // browser background color, don't change this */
+  --bbg: var(--lwt-accent-color-inactive, var(--lwt-accent-color));
+}
+
+/* // hide the contens of the toolbox by default
+   // and give some padding area to be able to hover it
+ */
+#navigator-toolbox {
+  padding-right: var(--spacing);
+}
+#navigator-toolbox > * {
+  opacity: 0%;
+}
+
+/* // when hovering the toolbox or sidebar, show them
+   ** you can change the 'preface' value
+
+   wish normal CSS had sass,stylus,less style nesting
+ */
+#main-window[titlepreface="|| "],
+#main-window:has(#sidebar-box:hover),
+#main-window:has(#navigator-toolbox:hover),
+#main-window:has(#navigator-toolbox:focus-within),
+#main-window:has(toolbarbutton[open="true"])
+{
+  --sdb-wdt: var(--sdb-wdt-max);
+}
+
+#main-window[titlepreface="|| "] #navigator-toolbox,
+#main-window:has(#sidebar-box:hover) #navigator-toolbox,
+#main-window:has(#navigator-toolbox:hover) #navigator-toolbox,
+#main-window:has(#navigator-toolbox:focus-within) #navigator-toolbox,
+#main-window:has(toolbarbutton[open="true"]) #navigator-toolbox
+{
+  padding-right: 0;
+}
+
+#main-window[titlepreface="|| "] #navigator-toolbox > *,
+#main-window:has(#sidebar-box:hover) #navigator-toolbox > *,
+#main-window:has(#navigator-toolbox:hover) #navigator-toolbox > *,
+#main-window:has(#navigator-toolbox:focus-within) #navigator-toolbox > *,
+#main-window:has(toolbarbutton[open="true"]) #navigator-toolbox > *
+{
+  opacity: 100%;
+}
+
+/* // background of the */
+.browserStack {
+  background: var(--bbg);
+}
+
+#appcontent {
+  height: 100vh;
+  /* // offset the web page up to fit the browser height */
+  margin-top: calc(var(--toolbox-height) * -1);
+}
+
+/* // for the toolbox to not hide in fullscreen */
+#navigator-toolbox[inFullscreen="true"] {
+  margin-top: 0 !important;
+}
+/* // reset the web page offset when playing some video in fullscreen */
+#main-window[inDOMFullscreen="true"] #appcontent {
+  margin-top: 0;
+}
+
+#appcontent browser {
+  margin: var(--spacing);
+  margin-left: 0;
+  margin-top: var(--spacing);
+  border-radius: var(--br);
+
+  box-sizing: border-box;
+
+  /* ** small details to separate the web page from the surroundings */
+  box-shadow: 0px 0px 7px #00000030;
+  border: 1px solid #00000020;
+}
+
+/* // remove margin from the dev tools */
+#appcontent .devtools-toolbox-side-iframe {
+  margin: 0 !important;
+}
+
+/* // make status panel (the bar with url when you hover links)
+ * // fit better with theme
+ */
+#statuspanel {
+  margin-bottom: var(--spacing);
+  margin-right: var(--spacing);
+}
+#statuspanel-label {
+  background: var(--bbg) !important;
+  border: 1px solid #00000020 !important;
+  color: var(--toolbar-color) !important;;
+}
+
+/* // make find bar fit with theme */
+findbar {
+  background: var(--bbg) !important;
+  border: none !important;
+  padding-top: 0 !important;;
+}
+
+/* // hide the sidebar header (only when sidebery opened)
+   ** feel free to disable this
+   ** or change the sidebarcommand to something else (get from browser dev mode)
+*/
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
+  display: none;
+  /**/
+}
+
+#sidebar-header {
+  border: none !important;;
+}
+
+/* // hide the sidebar close button (closing the sidebar messes the theme) */
+#sidebar-header #sidebar-close {
+  display: none;
+}
+
+#sidebar-box {
+  padding-right: var(--spacing);
+  background: var(--bbg) !important;
+
+  min-width: 0px !important;
+  width: var(--sdb-wdt) !important;
+  overflow: clip;
+  transition: width var(--trans);
+}
+
+#sidebar-splitter {
+  display: none;
+}
+
+#sidebar {
+  overflow: clip;
+  /*border-radius: var(--br); */ /* // adds some visual glitches */
+
+  /* // keep the sidebar content in a specific size */
+  width: calc(var(--sdb-wdt-max) - var(--spacing) * 0.5);
+  margin-left: calc(var(--spacing) * 0.4);
+}
+
+#main-window #titlebar {
+  overflow: clip;
+}
+
+/* // default state: Set initial height to enable animation */
+#main-window #titlebar { height: 3rem !important; }
+#main-window[uidensity="touch"] #titlebar { height: 3.35em !important; }
+#main-window[uidensity="compact"] #titlebar { height: 2.7em !important; }
+
+/* // hide the defaul tab bar */
+#tabbrowser-tabs,
+#alltabs-button,
+#new-tab-button
+{
+  display: none;
+}
+
+#navigator-toolbox {
+  padding-bottom: var(--spacing);
+  transition: width var(--trans);
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.titlebar-buttonbox-container {
+  margin-top: .5rem;
+}
+
+
+#navigator-toolbox {
+  width: var(--sdb-wdt);
+  height: var(--toolbox-height);
+}
+
+#navigator-toolbox > * {
+  transition: opacity var(--trans);
+}
+
+/* // hide sidebar button
+   // closing the sidebar messes up the theme
+*/
+#sidebar-button {
+  display: none;
+}
+
+#nav-bar {
+  /* ** width of the window control buttons (min max close)
+     // change to 0 if using server side decorations
+  */
+  --wbt-wdt: 4rem;
+
+  margin-top: -2.75rem;
+  width: calc(var(--sdb-wdt) - var(--wbt-wdt)) !important;
+  background: none !important;
+  margin-left: calc(var(--spacing) * -.75);
+
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#nav-bar.browser-toolbar {
+  overflow: visible !important;
+  height: 3rem;
+}
+
+#urlbar-container {
+  position: absolute;
+
+  flex: 0 !important;
+
+  margin: 0;
+  top: 2.75rem;
+
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/* // put the url bar in the right position */
+#urlbar {
+  width: calc(var(--sdb-wdt) - var(--spacing) * 1.5) !important;
+  margin-left: calc(var(--spacing) * 1);
+
+  padding-top: .5rem;
+}
+
+#urlbar-background {
+  border-radius: var(--br) !important;
+  height: 2.75rem;
+}
+
+/* // means when the suggestions list is showing */
+#urlbar[breakout-extend="true"] {
+  padding: 0 !important;
+  width: calc(var(--sdb-wdt) - var(--spacing) * 1) !important;
+  margin-left: calc(var(--spacing) * 1.25);
+  border: 1px solid #fafafa40;
+  border-radius: var(--br);
+
+  box-shadow: 0px 3px 7px #00000030;
+}
+
+#urlbar[breakout-extend="true"]  #urlbar-background {
+  border-radius: var(--br) var(--br) 0 0 !important;
+}
+
+.urlbarView {
+  background: var(--toolbar-field-focus-background-color) !important;
+  width: calc(100%) !important;
+  margin-left: 0 !important;
+  margin-top: -.25rem !important;
+  box-sizing: border-box;
+  border-radius: 0 0 var(--br) var(--br);
+}
+
+/* ## extras
+   // feel free to commend or uncomment each setting
+   // I personally would recommend to keep them to keep
+   // stuff cleaner
+*/
+
+/* ** hide reader mode button when editing url bar */
+#urlbar[breakout-extend="true"] #reader-mode-button {
+  display: none;
+}
+
+/* hide pip mode button when editing url bar */
+#urlbar[breakout-extend="true"] #picture-in-picture-button {
+  display: none;
+}
+
+/* ** hide "Shield" icon */
+#urlbar:not(:hover) #tracking-protection-icon-container {
+	width: 0;
+	overflow: clip;
+}
+
+/* ** hide Site information buttons */
+#urlbar:not(:hover) #identity-box {
+	width: 0;
+	overflow: clip;
+}
+
+/* ** hide the "Search with" indicator on the urlbar */
+#urlbar-search-mode-indicator { display: none; }
+
+/* ** hide the "Always open in container" button */
+#urlbar #pageAction-urlbar-_testpilot-containers {
+	display: none;
+}
+
+/* ** hide Container name */
+#userContext-label, #userContext-icons, #userContext-indicator {
+	display: none;
+}
+
+/* ** hide identity box */
+#identity-box {
+  width: 0px;
+  overflow: hidden;
+}
+
+/* ** hide 'open in side view' button*/
+#pageAction-urlbar-side-view_mozilla_org {
+  display: none;
+}
+
+
