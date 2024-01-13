@@ -68,5 +68,6 @@ this theme is:
 - best used with the [sidebery extension](https://github.com/mbnuqw/sidebery) but I guess can be used with Tree Style Tab, didn't test
 - best used with themes from 'firefox colour' that have no backgrounds or gradients
 - not guaranteed to be 100% working out of the box, you might need to tweak it some
+- probably doesn't work with mac window buttons
 
 (for some more info and warnings see the comments in `chrome/userChrome.css`)
