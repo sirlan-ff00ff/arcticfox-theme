@@ -23,9 +23,11 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 
 * clone or download this repo locally
 * install the listed addons
+    * allow them to run in private windows
 * open sidebery settings, go to 'help' and 'import addon data', then select the json file in `sidebery/sidebery-data.json`
 * (if not showing already) open the browser sidebar and select the 'sidebery' sidebar
 * in the settings for the 'userchrome toggle' extension, for the 'style toggle 1' put `|| ` in prefix (should also have the ending space) and apply changes (you migh also change the name to 'sidebar' if you want, and disable the 'display notification')
+* select a firefox theme other than the 'system/auto' one (alpenglow also looks weird with it)
 * reorder the browser toolbar widgets, they should be in the order
     * `url-bar  sidebar-toggle-button  back  forward  reload  spacer  extensions-button  overflow-menu  hamburger-menu`
     * the url bar **must** be the first item
@@ -52,6 +54,8 @@ _read next section_
 
 * write `about:profiles` in the url bar (and accept the message?)
 * on the profile that is listed as 'default profile: yes' click 'open directory' for the root directory, it should open your file manager in that folder
+    * on flatpak programs, this might show the wrong addres (`/home/$user/.mozilla/...`), the right address is (`/home/$user/.var/app/$app_id/.mozilla/...`)
+    * it also might be something other than `.mozilla` if you're using a fork (librewolf, waterfox, etc)
 * create (if doesn't exist) a sub folder called 'chrome' (exact name, all minuscule)
 * put the file `chrome/userChrome.css` in there (the file must be called 'userChrome.css')
 
