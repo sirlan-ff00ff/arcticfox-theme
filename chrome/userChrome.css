@@ -236,7 +236,7 @@ findbar {
 }
 /* ** in private window, put an outline around the page and url bar */
 #main-window[privatebrowsingmode="temporary"] #appcontent browser {
-  border: 3px solid var(--poiple);
+  border: 1px solid var(--poiple);
 }
 #main-window[privatebrowsingmode="temporary"] {
   --toolbar-field-border-color: var(--poiple) !important;
