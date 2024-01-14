@@ -18,6 +18,7 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers) for multiple logins
 - [Userchrome Toggle](https://addons.mozilla.org/en-GB/firefox/addon/userchrome-toggle) for toggling keeping the sidebar open (migh try creating an extensions for extra controls later, idk)
 - (preference) themes from [Firefox Color](https://addons.mozilla.org/en-GB/firefox/addon/firefox-color/)
+    - another recomendation is [Adaptive Tab Bar Color](https://addons.mozilla.org/en-US/firefox/addon/adaptive-tab-bar-colour)
 
 # how to install
 
@@ -69,6 +70,7 @@ _read next section_
 - put your mouse on the left edge of the window to open the side bar containing the tabs, url bar, and browser toolbar
 - to keep the side bar open, on the extensions list from the toolbar, click the userchrome togge one, it should now keep the sidebar open (might glitch a bit)
 - for workflow stuff, see the sidebery documentation
+- to drag the window use the header area when it's expanded
 
 ---
 
