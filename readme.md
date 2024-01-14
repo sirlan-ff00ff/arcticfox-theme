@@ -3,6 +3,13 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 ![scrrenshot](arcticfox-screenshot.png)  
 [a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
 
+🎊 **features**  
+* it kinda looks like Arc... that's the whole point
+* (quite) minimalistic visuals
+* has space to grab the window! (quite uncomon with themes that mess with the header bar)
+* somewhat tested
+* some strightforward(-ish) customization points
+
 ---
 
 ℹ️ **addons to use**
