@@ -29,6 +29,7 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 * (if not showing already) open the browser sidebar and select the 'sidebery' sidebar
 * in the settings for the 'userchrome toggle' extension, for the 'style toggle 1' put `|| ` in prefix (should also have the ending space) and apply changes (you migh also change the name to 'sidebar' if you want, and disable the 'display notification')
 * select a firefox theme other than the 'system/auto' one (alpenglow also looks weird with it)
+* disable the bookmarks toolbar
 * reorder the browser toolbar widgets, they should be in the order
     * `url-bar  sidebar-toggle-button  back  forward  reload  spacer  extensions-button  overflow-menu  hamburger-menu`
     * the url bar **must** be the first item
