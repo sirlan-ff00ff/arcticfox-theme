@@ -3,8 +3,6 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 ![scrrenshot](arcticfox-screenshot.png)  
 [a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
 
-**right now doesn't work well with private windows (will fix later)** (in private windows the sidebar is hidden by default, you can enable it with ctrl + h and then changing to the sidebery sidebar, also the 'private window' text covers the browser toolbar buttons)
-
 ---
 
 ℹ️ **addons to use**
@@ -64,10 +62,10 @@ _read next section_
 
 this theme is:
 - buggy in some places
+- janky in private windows or windows with the sidebar hidden by default
 - only tested in firefox 119 on linux
 - best used with the [sidebery extension](https://github.com/mbnuqw/sidebery) but I guess can be used with Tree Style Tab, didn't test
-- best used with themes from 'firefox colour' that have no backgrounds or gradients
 - not guaranteed to be 100% working out of the box, you might need to tweak it some
-- probably doesn't work with mac window buttons
+- probably doesn't work with mac window buttons idk
 
 (for some more info and warnings see the comments in `chrome/userChrome.css`)
