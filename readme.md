@@ -21,7 +21,9 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 * in the settings for the 'userchrome toggle' extension, for the 'style toggle 1' put `|| ` in prefix (should also have the ending space) and apply changes (you migh also change the name to 'sidebar' if you want, and disable the 'display notification')
 * reorder the browser toolbar widgets, they should be in the order
     * `url-bar  sidebar-toggle-button  back  forward  reload  spacer  extensions-button  overflow-menu  hamburger-menu`
-    * **the url bar must be the first item**
+    * the url bar **must** be the first item
+    * there **must** be the sidebar toggle
+    * do this **before** applying the theme, it messes up the customize page
 
 **if you don't have userChrome (and browser dev tool) enabled (if you do, skip to the next)**
 
