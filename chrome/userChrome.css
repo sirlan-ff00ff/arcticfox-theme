@@ -166,6 +166,12 @@ findbar {
   padding-top: 0 !important;;
 }
 
+/*
+#sidebar-box {
+  display: block !important;
+}
+*/
+
 /* // hide the sidebar header (only when sidebery opened)
    ** feel free to disable this
    ** or change the sidebarcommand to something else (get from browser dev mode)
@@ -219,9 +225,21 @@ findbar {
 /* // hide the defaul tab bar */
 #tabbrowser-tabs,
 #alltabs-button,
-#new-tab-button
+#new-tab-button,
+#private-browsing-indicator-with-label
 {
   display: none;
+}
+
+:root {
+  --poiple: #6e00bc;
+}
+/* ** in private window, put an outline around the page and url bar */
+#main-window[privatebrowsingmode="temporary"] #appcontent browser {
+  border: 3px solid var(--poiple);
+}
+#main-window[privatebrowsingmode="temporary"] {
+  --toolbar-field-border-color: var(--poiple) !important;
 }
 
 #navigator-toolbox {
@@ -235,7 +253,6 @@ findbar {
   margin-top: .5rem;
 }
 
-
 #navigator-toolbox {
   width: var(--sdb-wdt);
   height: var(--toolbox-height);
@@ -245,11 +262,35 @@ findbar {
   transition: opacity var(--trans);
 }
 
-/* // hide sidebar button
+
+/* // show toolbar if sidebar is closed */
+#main-window:has(#sidebar-box[hidden="true"])  #navigator-toolbox {
+  width: var(--sdb-wdt-max) !important;
+
+  border-radius: 0 0 var(--br) 0 !important;;
+  padding: 0 !important;
+  z-index: 1;
+}
+#main-window:has(#sidebar-box[hidden="true"])  #navigator-toolbox > * {
+  opacity: 100%;
+}
+
+/* // hide sidebar button (when sidebar is open)
    // closing the sidebar messes up the theme
 */
-#sidebar-button {
+#main-window:has(#sidebar-box:not([hidden="true"])) #sidebar-button {
   display: none;
+  /* */ 
+}
+#main-window:has(#sidebar-box[hidden="true"]) #sidebar-button {
+  border: 1px solid #fafafaa0;
+  background: #fafafa20;
+  border-radius: var(--br);
+  margin: .25rem !important;;
+}
+
+#main-window:has(#sidebar-box[hidden="true"]) #appcontent browser {
+  margin-left: var(--spacing);
 }
 
 #nav-bar {
@@ -306,6 +347,10 @@ findbar {
   border-radius: var(--br);
 
   box-shadow: 0px 3px 7px #00000030;
+}
+
+#main-window[privatebrowsingmode="temporary"] #urlbar[breakout-extend="true"] {
+  border: 2px solid var(--poiple);
 }
 
 #urlbar[breakout-extend="true"]  #urlbar-background {
@@ -372,5 +417,3 @@ findbar {
 #pageAction-urlbar-side-view_mozilla_org {
   display: none;
 }
-
-
