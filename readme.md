@@ -56,7 +56,7 @@ _read next section_
 * write `about:profiles` in the url bar (and accept the message?)
 * on the profile that is listed as 'default profile: yes' click 'open directory' for the root directory, it should open your file manager in that folder
     * on flatpak programs, this might show the wrong addres (`/home/$user/.mozilla/...`), the right address is (`/home/$user/.var/app/$app_id/.mozilla/...`)
-    * it also might be something other than `.mozilla` if you're using a fork (librewolf, waterfox, etc)
+    * it also might be something other than `.mozilla` if you're using a fork (librewolf)
 * create (if doesn't exist) a sub folder called 'chrome' (exact name, all minuscule)
 * put the file `chrome/userChrome.css` in there (the file must be called 'userChrome.css')
 
@@ -77,7 +77,9 @@ _read next section_
 this theme is:
 - buggy in some places
 - janky in private windows or windows with the sidebar hidden by default
-- only tested in firefox 119 on linux
+- only comfirmed to work on firefox 119 on linux
+    - tested on some forks, and ESR or anything based on it (waterfox, floorp) does not work
+    - the firefox version must fully support the `:has()` css selector
 - best used with the [sidebery extension](https://github.com/mbnuqw/sidebery) but I guess can be used with Tree Style Tab, didn't test
 - not guaranteed to be 100% working out of the box, you might need to tweak it some
 - probably doesn't work with mac window buttons idk
