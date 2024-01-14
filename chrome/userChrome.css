@@ -138,7 +138,7 @@
 
   /* ** small details to separate the web page from the surroundings */
   box-shadow: 0px 0px 7px #00000030;
-  border: 1px solid #00000020;
+  border: 1px solid #fafafa30;
 }
 
 /* // remove margin from the dev tools */
