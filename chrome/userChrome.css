@@ -81,7 +81,7 @@
 
    wish normal CSS had sass,stylus,less style nesting
  */
-#main-window[titlepreface="|| "],
+#main-window[titlepreface*="|| "],
 #main-window:has(#sidebar-box:hover),
 #main-window:has(#navigator-toolbox:hover),
 #main-window:has(#navigator-toolbox:focus-within),
@@ -90,7 +90,7 @@
   --sdb-wdt: var(--sdb-wdt-max);
 }
 
-#main-window[titlepreface="|| "] #navigator-toolbox,
+#main-window[titlepreface*="|| "] #navigator-toolbox,
 #main-window:has(#sidebar-box:hover) #navigator-toolbox,
 #main-window:has(#navigator-toolbox:hover) #navigator-toolbox,
 #main-window:has(#navigator-toolbox:focus-within) #navigator-toolbox,
@@ -99,7 +99,7 @@
   padding-right: 0;
 }
 
-#main-window[titlepreface="|| "] #navigator-toolbox > *,
+#main-window[titlepreface*="|| "] #navigator-toolbox > *,
 #main-window:has(#sidebar-box:hover) #navigator-toolbox > *,
 #main-window:has(#navigator-toolbox:hover) #navigator-toolbox > *,
 #main-window:has(#navigator-toolbox:focus-within) #navigator-toolbox > *,
