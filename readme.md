@@ -61,7 +61,7 @@ _read next section_
 * create (if doesn't exist) a sub folder called 'chrome' (exact name, all minuscule)
 * put the file `chrome/userChrome.css` in there (the file must be called 'userChrome.css')
 
-(you might want to edit some settings in the css file, feel free to open it in your text editor)
+(you might want to edit some settings in the css file, feel free to open it in your text editor, **if you're on Windows** there are some options in the file you need to uncomment to make it work better, do a ctrl + f for `WINDOWS` in the file)
 
 * close and re-open firefox, it should have the theme applied
 
@@ -79,7 +79,7 @@ _read next section_
 this theme is:
 - buggy in some places
 - janky in private windows or windows with the sidebar hidden by default
-- only comfirmed to work on firefox 119 on linux
+- only comfirmed to work on firefox 119 on linux, and on Windows 10 (with tweaks)
     - tested on some forks, and ESR or anything based on it (waterfox, floorp) does not work
     - the firefox version must fully support the `:has()` css selector
 - best used with the [sidebery extension](https://github.com/mbnuqw/sidebery) but I guess can be used with Tree Style Tab, didn't test
