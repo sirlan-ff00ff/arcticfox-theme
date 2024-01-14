@@ -265,7 +265,7 @@ findbar {
 
 /* // show toolbar if sidebar is closed */
 #main-window:has(#sidebar-box[hidden="true"])  #navigator-toolbox {
-  width: var(--sdb-wdt-max) !important;
+  --sdb-wdt: var(--sdb-wdt-max);
 
   border-radius: 0 0 var(--br) 0 !important;;
   padding: 0 !important;
