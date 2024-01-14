@@ -33,6 +33,7 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
     * the url bar **must** be the first item
     * there **must** be the sidebar toggle
     * do this **before** applying the theme, it messes up the customize page
+    * also set the density to 'normal' (it probably already is)
 
 **if you don't have userChrome (and browser dev tool) enabled (if you do, skip to the next)**
 
