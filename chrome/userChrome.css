@@ -1,14 +1,14 @@
-/* # Arcticfox - userChrome
+/* # arcticfox - userChrome
    - under MPL 2.0
 
-  dragon's (very hacky) arc-like theme for firefox
-  ft. sidebery, userchrome-toggle, and firefox color
+  dragon's (very hacky) arc browser-like theme for firefox
+  ft. sidebery, and userchrome-toggle
 
   !!! for the theme to work:
   - the side bar needs to always be visible
-    and with Sidebery (maybe TST but nothing guaranteed) opened
+    and with sidebery (maybe TST but nothing guaranteed) opened
   - the order of the toolbar widgets should be:
-    [url-bar sidebar-toggle-button back forward reload spacer extensions overflow hamburger-menu]
+    [url-bar sidebar-toggle back forward reload spacer extensions overflow hamburger-menu]
     you can change the order of some of those, but the url bar must be the first item
   - preferencially have userchrome-toggle addon or something else to toggle keeping the
     sidebar opened
@@ -25,20 +25,20 @@
   ** for thing you can change
 
   !!! some extra warnings (drawbacks)
-  - the menu bar (activated with Alt) doesn't work
-  - the bookmarks toolbar doesn't work'
+  - the menu bar (activated with alt) doesn't work
+  - the bookmarks toolbar doesn't work
   - the 'customise toolbar...' page will not let you rearrange
     things in the toolbar, do it with the theme disabled
-    (I can put in the overflow menu tho)
+    (can still put things in the overflow menu tho)
   - there will be visual glitches in certain areas, for example
-    in some places the background be be transparent (showing behind the window)
-    and flicker!!
+    in some places the background may be transparent (showing behind the window)
+    and flicker
   - pages and addons that expect ui elements to be in certain places may nor work
-  - some browser themes may not work well or need some tweak
-  - some menus you open (or change the addon in the sidebar) may toggle off the
+  - some browser color themes may not work well or need some tweak
+  - some menus you open (or if change the addon in the sidebar) may toggle off the
     window preface and not keep the sidebar open
   - using addons that use the sidebar (for example firefox side view) is awkard
-  - might not work depending on your window controls
+  - might not work well depending on your window controls
 
 */
 
@@ -54,15 +54,15 @@
   --sdb-wdt: 0;
 
   /* ** theme border radius */
-  --br: calc(7.5px * 1.5);
+  --br: 10px;
 
   /* **? height of the toolbox (browser header/tool bar) */
   --toolbox-height: 6.25rem;
 
-  /* ** transitions (mainly sidebar) speed */
+  /* ** transitions (mainly sidebar) duration */
   --trans: .5s;
 
-  /* // browser background color, don't change this */
+  /* // browser background color, don't change this var */
   --bbg: var(--lwt-accent-color-inactive, var(--lwt-accent-color));
 }
 
@@ -108,7 +108,7 @@
   opacity: 100%;
 }
 
-/* // background of the */
+/* // background of the area around the web page */
 .browserStack {
   background: var(--bbg);
 }
@@ -136,7 +136,10 @@
 
   box-sizing: border-box;
 
-  /* ** small details to separate the web page from the surroundings */
+  /* ** small details to separate the web page from the surroundings
+     // feel free to disable these, and use Adaptive Tab Bar Color to
+        make the entire browser fit the page color
+  */
   box-shadow: 0px 0px 7px #00000030;
   border: 1px solid #fafafa30;
 }
@@ -144,6 +147,10 @@
 /* // remove margin from the dev tools */
 #appcontent .devtools-toolbox-side-iframe {
   margin: 0 !important;
+}
+#appcontent .devtools-toolbox-bottom-iframe {
+  margin: 0;
+  border-radius: 0;
 }
 
 /* // make status panel (the bar with url when you hover links)
@@ -174,11 +181,11 @@ findbar {
 
 /* // hide the sidebar header (only when sidebery opened)
    ** feel free to disable this
-   ** or change the sidebarcommand to something else (get from browser dev mode)
+   ** or change the sidebarcommand to some other addon (get from browser dev mode)
 */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
   display: none;
-  /**/
+  /* */
 }
 
 #sidebar-header {
@@ -222,7 +229,7 @@ findbar {
 #main-window[uidensity="touch"] #titlebar { height: 3.35em !important; }
 #main-window[uidensity="compact"] #titlebar { height: 2.7em !important; }
 
-/* // hide the defaul tab bar */
+/* // hide the defaul tab bar and the private window label */
 #tabbrowser-tabs,
 #alltabs-button,
 #new-tab-button,
@@ -232,6 +239,7 @@ findbar {
 }
 
 :root {
+  /* ** feel free to change this color */
   --poiple: #6e00bc;
 }
 /* ** in private window, put an outline around the page and url bar */
@@ -263,7 +271,7 @@ findbar {
 }
 
 
-/* // show toolbar if sidebar is closed */
+/* // show toolbar if sidebar is closed (so you can open it with the button) */
 #main-window:has(#sidebar-box[hidden="true"])  #navigator-toolbox {
   --sdb-wdt: var(--sdb-wdt-max);
 
@@ -312,6 +320,7 @@ findbar {
 
 #nav-bar {
   /* ** width of the window control buttons (min max close)
+        that the toolbar should take into account
      // change to 0 if using server side decorations
   */
   --wbt-wdt: 3.5rem;
@@ -383,9 +392,9 @@ findbar {
 }
 
 /* ## extras
-   // feel free to commend or uncomment each setting
-   // I personally would recommend to keep them to keep
-   // stuff cleaner
+   // feel free to comment or uncomment each setting
+      I personally would recommend to keep them to keep
+      stuff cleaner
 */
 
 /* ** hide reader mode button when editing url bar */
