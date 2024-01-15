@@ -2,6 +2,7 @@
 a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc  
 ![scrrenshot](arcticfox-screenshot.png)  
 [a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
+[little demonstration video with slightly newer version](https://youtu.be/0c-OLC-7gPE)  
 
 🎊 **features**  
 * it kinda looks like Arc... that's the whole point
