@@ -1,15 +1,15 @@
 # arcticfox theme
-a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc  
+a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc browser on mac  
 ![scrrenshot](arcticfox-screenshot.png)  
 [a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
 [little demonstration video with slightly newer version](https://youtu.be/0c-OLC-7gPE)  
 
 🎊 **features**  
 * it kinda looks like Arc... that's the whole point
-* (quite) minimalistic visuals
+* kinda minimalistic
 * has space to grab the window! (quite uncomon with themes that mess with the header bar)
 * somewhat tested
-* some strightforward(-ish) customization points
+* some strightforward(-ish) customization points in the file
 
 ---
 
@@ -35,9 +35,9 @@ yes, it is a bit contrived, but requires quite a specific setup to work well
 * disable the bookmarks toolbar
 * disable the 'firefox view' button (that one at the top, left of the tabs, that firefox enables by default)
 * reorder the browser toolbar widgets, they should be in the order
-    * `url-bar  sidebar-toggle-button  back  forward  reload  spacer  extensions-button  overflow-menu  hamburger-menu`
-    * the url bar **must** be the first item
-    * there **must** be the sidebar toggle
+    * `url-bar  'show sidebars'-button  back  forward  reload  spacer  extensions-button  overflow-menu  hamburger-menu`
+    * the url bar **must** be the first item in the toolbar
+    * there **must** be the sidebar button (for enabling the sidebar in private windows)
     * do this **before** applying the theme, it messes up the customize page
     * also set the density to 'normal' (it probably already is)
 
@@ -66,13 +66,13 @@ _read next section_
 * create (if doesn't exist) a sub folder called 'chrome' (exact name, all minuscule)
 * put the file `chrome/userChrome.css` in there (the file must be called 'userChrome.css')
 
-(**you might want to edit some settings in the css file**, feel free to open it in your text editor, **if you're on Windows** there are some options in the file you need to uncomment to make it work better, do a 'ctrl + f' for `WINDOWS` in the file)
+(ℹ️ **you might want to edit some settings in the css file**, feel free to open it in your text editor, **if you're on Windows** there are some options in the file you need to uncomment to make it work better, do a 'ctrl + f' for `WINDOWS` in the file)
 
 * close and re-open firefox, it should have the theme applied
 
 # using
 
-- put your mouse on the left edge of the window to open the side bar containing the tabs, url bar, and browser toolbar
+- put your mouse on the left edge of the window to open the sidebar containing the tabs, url bar, and browser toolbar
 - to keep the side bar open, on the extensions list from the toolbar, click the userchrome togge one, it should now keep the sidebar open (might glitch a bit)
 - for workflow stuff, see the sidebery documentation
 - to drag the window use the header area when it's expanded (yea, the rest of the top edge of the screen doesn't work)
@@ -87,7 +87,7 @@ this theme is:
 - only comfirmed to work on firefox 119 on linux, and on Windows 10 (with tweaks)
     - tested on some forks, and ESR or anything based on it (waterfox, floorp) does not work
     - the firefox version must fully support the `:has()` css selector
-- best used with the sidebery but I guess can be used with Tree Style Tab, didn't test
+- best used with sidebery but I guess can be used with Tree Style Tab, didn't test tho
 - not guaranteed to be 100% working out of the box, you might need to tweak it some
 - probably doesn't work with mac window buttons idk
 
