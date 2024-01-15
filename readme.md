@@ -45,7 +45,7 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 
 * right click anywhere in the page and open 'inspect' from the menu, it should open the dev panel
 * click the three dots at the top right corner of that panel and in settings
-* right at the bottom/right in the 'advanced' enable 'anable browser chrome and add-on debugging toolboxes' and 'enable remote debugging'
+* right at the bottom/right in the 'advanced' enable 'enable browser chrome and add-on debugging toolboxes' and 'enable remote debugging'
 
 * close and re-open firefox
 
