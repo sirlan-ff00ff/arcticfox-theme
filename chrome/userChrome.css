@@ -141,7 +141,7 @@
         make the entire browser fit the page color
   */
   box-shadow: 0px 0px 7px #00000030;
-  border: 1px solid #fafafa30;
+  /*border: 1px solid #fafafa30;*/
 }
 
 /* // remove margin from the dev tools */
@@ -305,7 +305,7 @@ findbar {
    // uncomment if you're on windows.
       recomended --wbt-wdt: 7rem
 */
-/*
+
 .titlebar-buttonbox {
   margin-right: var(--spacing);
   border-radius: calc(var(--br) / 2);
@@ -316,14 +316,14 @@ findbar {
 .titlebar-buttonbox .titlebar-button {
   padding: .75rem !important;
 }
-*/
+
 
 #nav-bar {
   /* ** width of the window control buttons (min max close)
         that the toolbar should take into account
      // change to 0 if using server side decorations
   */
-  --wbt-wdt: 3.5rem;
+  --wbt-wdt: 7rem;
 
   margin-top: -2.75rem;
   width: calc(var(--sdb-wdt) - var(--wbt-wdt)) !important;
