@@ -391,6 +391,64 @@ findbar {
   border-radius: 0 0 var(--br) var(--br);
 }
 
+/* ## overlay unless pinned
+   // this section makes so the sidebar will
+      overlay the page (instead of resizing it)
+      unless it is pinned to be kept open
+   // btw yes this code is really messy, if I am to add more
+      stuff to this theme, might have to move this to a template language
+      because css selectors are absurdly annoying
+*/
+:root {
+  /* ** the colours of the line, and shadow for the sidebar overlay */
+  --ln-c: #fafafa30;
+  --sw-c: #00000010;
+
+  /* // don't mess with these (and then come to me saying something is broken) */
+  --grad: linear-gradient(90deg, var(--ln-c) 0%, var(--ln-c) 4%, var(--sw-c) 5%, transparent);  
+  --nwdt: calc(var(--sdb-wdt) + 1rem);
+  --bdrr: 1rem solid;
+  --bdri: var(--grad) 1;
+  --bdio: 0 1rem;
+  --bdis: 0 100%;
+}
+/* ** feel free to comment <from here> if you don't want this behaviour */
+#main-window:not([titlepreface*="|| "]) #sidebar-box {
+  position: absolute;
+  z-index: 1;
+  height: calc(100vh - var(--toolbox-height));
+  top: var(--toolbox-height);
+}
+#main-window:not([titlepreface*="|| "]) #navigator-toolbox {
+  position: absolute;
+  z-index: 2;
+}
+
+#main-window:not([titlepreface*="|| "]):has(#sidebar-box:hover) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(#navigator-toolbox:hover) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(#navigator-toolbox:focus-within) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(toolbarbutton[open="true"]) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(#sidebar-box:hover) #sidebar-box,
+#main-window:not([titlepreface*="|| "]):has(#navigator-toolbox:hover) #sidebar-box,
+#main-window:not([titlepreface*="|| "]):has(#navigator-toolbox:focus-within) #sidebar-box,
+#main-window:not([titlepreface*="|| "]):has(toolbarbutton[open="true"]) #sidebar-box
+{
+  width: var(--nwdt) !important;
+  border-right: var(--bdrr) !important;
+  border-image: var(--bdri) !important;
+  border-image-outset: var(--bdio) !important;
+  border-image-slice: var(--bdis) !important;
+  padding-left: calc(var(--spacing) / 2) !important;
+}
+
+#main-window:not([titlepreface*="|| "]) #appcontent {
+  margin-top: 0;
+}
+#main-window:not([titlepreface*="|| "]) #appcontent browser {
+  margin-left: var(--spacing);
+}
+/* <to here> */
+
 /* ## extras
    // feel free to comment or uncomment each setting
       I personally would recommend to keep them to keep
