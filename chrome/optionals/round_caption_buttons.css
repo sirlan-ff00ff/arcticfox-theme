@@ -14,10 +14,10 @@ See the above repository for updates as well as full license text. */
 
 .titlebar-button {
   background: transparent !important;
-  padding-inline: 10px !important;
+  padding-inline: 7px !important;
   transition: opacity 0.2s ease;
 }
-.titlebar-close {	padding-right: 18px !important; }
+.titlebar-close {	padding-right: 1px !important; }
 
 .titlebar-button > .toolbarbutton-icon {
 	list-style-image: none;
