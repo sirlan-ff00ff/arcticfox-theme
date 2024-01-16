@@ -77,6 +77,12 @@ _read next section_
 - for workflow stuff, see the sidebery documentation
 - to drag the window use the header area when it's expanded (yea, the rest of the top edge of the screen doesn't work)
 
+<details><summary><b>extra customization information and tips</b></summary>
+
+_nothing here yet_
+
+</details>
+
 ---
 
 ⚠️ **btw**
