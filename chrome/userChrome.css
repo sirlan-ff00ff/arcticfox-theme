@@ -43,7 +43,7 @@
 */
 /* ## Optionals */
 /* make caption buttons like macOS */
-/* ** @import url('optionals/round_caption_buttons.css'); */
+@import url('optionals/round_caption_buttons.css');
 
 :root {
   /* ** spacing around the web page and other things */
@@ -309,7 +309,7 @@ findbar {
       recomended --wbt-wdt: 7rem
 */
 
-.titlebar-buttonbox {
+/* .titlebar-buttonbox {
   margin-right: var(--spacing);
   border-radius: calc(var(--br) / 2);
   max-width: 7.5rem;
@@ -318,7 +318,7 @@ findbar {
 }
 .titlebar-buttonbox .titlebar-button {
   padding: .75rem !important;
-}
+} */
 
 
 #nav-bar {

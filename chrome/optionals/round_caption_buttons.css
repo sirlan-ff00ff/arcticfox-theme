@@ -17,7 +17,6 @@ See the above repository for updates as well as full license text. */
   padding-inline: 7px !important;
   transition: opacity 0.2s ease;
 }
-.titlebar-close {	padding-right: 1px !important; }
 
 .titlebar-button > .toolbarbutton-icon {
 	list-style-image: none;
