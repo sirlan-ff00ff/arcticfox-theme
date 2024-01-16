@@ -148,6 +148,12 @@
   border: 1px solid #fafafa30;
 }
 
+/* // reset the web page margin and border radius when playing some video in fullscreen */
+#main-window[inDOMFullscreen="true"] #appcontent browser {
+  margin: 0;
+  border-radius: 0;
+}
+
 /* // remove margin from the dev tools */
 #appcontent .devtools-toolbox-side-iframe {
   margin: 0 !important;
