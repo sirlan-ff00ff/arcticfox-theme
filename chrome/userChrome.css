@@ -41,6 +41,9 @@
   - might not work well depending on your window controls
 
 */
+/* ## Optionals */
+/* make caption buttons like macOS */
+/* ** @import url('optionals/round_caption_buttons.css'); */
 
 :root {
   /* ** spacing around the web page and other things */
