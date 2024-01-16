@@ -326,7 +326,7 @@ findbar {
         that the toolbar should take into account
      // change to 0 if using server side decorations
   */
-  --wbt-wdt: 7rem;
+  --wbt-wdt: 5rem;
 
   margin-top: -2.75rem;
   width: calc(var(--sdb-wdt) - var(--wbt-wdt)) !important;

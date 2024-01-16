@@ -81,7 +81,7 @@ _read next section_
 
 - **Caption buttons like macOS**
     - uncomment line 46  `@import url('optionals/round_caption_buttons.css');`
-    - adjusts `--wbt-wdt: 7rem;` value in line 329 (I recomend 4.75rem)
+    - adjusts `--wbt-wdt: 7rem;` value in line 329 (I recomend 5rem)
 
 </details>
 
