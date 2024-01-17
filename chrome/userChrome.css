@@ -81,18 +81,17 @@
 }
 
 /* drag window using border */
-.browserContainer::after
-{
-content: "";
-display: flex !important;
-pointer-events: none;
-position: absolute;
--moz-window-dragging: drag;
-z-index: 1;
-background-color: transparent;
-border-radius: 10px;
-height: var(--spacing);
-width: 100%;
+.browserContainer::after {
+  content: "";
+  display: flex !important;
+  pointer-events: none;
+  position: absolute;
+  -moz-window-dragging: drag;
+  z-index: 1;
+  background-color: transparent;
+  border-radius: 10px;
+  height: var(--spacing);
+  width: 100%;
 }
 
 /* // when hovering the toolbox or sidebar, show them
