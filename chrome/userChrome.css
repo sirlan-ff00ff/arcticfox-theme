@@ -445,6 +445,7 @@ findbar {
 }
 #main-window:not([titlepreface*="|| "]) #navigator-toolbox {
   position: absolute;
+  overflow: clip;
   z-index: 2;
 }
 
@@ -463,6 +464,22 @@ findbar {
   border-image-outset: var(--bdio) !important;
   border-image-slice: var(--bdis) !important;
   padding-left: calc(var(--spacing) / 2) !important;
+}
+
+#main-window:not([titlepreface*="|| "]):has(#sidebar-box:hover) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(#navigator-toolbox:hover) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(#navigator-toolbox:focus-within) #navigator-toolbox,
+#main-window:not([titlepreface*="|| "]):has(toolbarbutton[open="true"]) #navigator-toolbox
+{
+  animation-name: oflow;
+  animation-duration: .01s;
+  animation-delay: calc(var(--trans) / 2);
+  animation-fill-mode: forwards;
+}
+
+@keyframes oflow {
+  from {overflow: clip}
+  to {overflow: visible}
 }
 
 #main-window:not([titlepreface*="|| "]) #appcontent {
