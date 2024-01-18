@@ -11,6 +11,8 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 * somewhat tested
 * some strightforward(-ish) customization points in the file
 
+⚠️ **this is the old original version of the theme, which has quite messy code and is a bit more annoying to configure, and might be missing some features compared to the new one in the main branch**
+
 ---
 
 ℹ️ **addons to use**
