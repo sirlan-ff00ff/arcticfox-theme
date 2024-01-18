@@ -1,5 +1,5 @@
 # arcticfox theme
-a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc browser on mac  
+a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc browser on mac (rev 1)  
 ![scrrenshot](arcticfox-screenshot.png)  
 [a post with a video of it (lsightly earlier in dev) in use](https://derg.social/notes/9ofri85060)  
 [little demonstration video with slightly newer version](https://youtu.be/0c-OLC-7gPE)  
@@ -9,7 +9,7 @@ a theme for Firefox (and Sidebery, because it fancy) to make it look and somewha
 * kinda minimalistic
 * has space to grab the window! (quite uncomon with themes that mess with the header bar)
 * somewhat tested
-* some strightforward(-ish) customization points in the file
+* some strightforward(-ish) customization in the file
 
 ---
 
@@ -65,6 +65,7 @@ _read next section_
     * it also might be something other than `.mozilla` if you're using a fork (librewolf)
 * create (if doesn't exist) a sub folder called 'chrome' (exact name, all minuscule)
 * put the file `chrome/userChrome.css` in there (the file must be called 'userChrome.css')
+* if you want to use some extra options, put the folder `opt/` there as well
 
 (ℹ️ **you might want to edit some settings in the css file**, feel free to open it in your text editor, **if you're on Windows** there are some options in the file you need to uncomment to make it work better, do a 'ctrl + f' for `WINDOWS` in the file)
 
@@ -75,34 +76,12 @@ _read next section_
 - put your mouse on the left edge of the window to open the sidebar containing the tabs, url bar, and browser toolbar
 - to keep the side bar open, on the extensions list from the toolbar, click the userchrome togge one, it should now keep the sidebar open (might glitch a bit)
 - for workflow stuff, see the sidebery documentation
-- to drag the window use the header area when it's expanded (yea, the rest of the top edge of the screen doesn't work)
+- you can drag the window from the top space or on the header bar when expanded
 
 <details><summary><b>extra customization information and tips</b></summary>
 
-
-- **Caption buttons like macOS**
-    - uncomment line 46 @import url('optionals/round_caption_buttons.css');
-    - adjusts --wbt-wdt: 7rem; value in line 329 (I recomend 5rem)
-    - comment (lines 313-322) (by default is comment)
-        ```css
-        /* ** WINDOWS - make the window buttons less huge 
-        // uncomment if you're on windows.
-            recomended --wbt-wdt: 7rem
-        */
-        /*
-        .titlebar-buttonbox {
-        margin-right: var(--spacing);
-        border-radius: calc(var(--br) / 2);
-        max-width: 7.5rem;
-        justify-content: center;
-        overflow: clip;
-        }
-        .titlebar-buttonbox .titlebar-button {
-        padding: .75rem !important;
-        }
-        */
-        ```
-
+- **Window buttons like macOS**
+    - uncomment `@import url('opt/mac_buttons.css');` in the imports section
 
 </details>
 
@@ -113,11 +92,11 @@ _read next section_
 this theme is:
 - buggy in some places
 - janky in private windows or windows with the sidebar hidden by default
-- only comfirmed to work on firefox 119 on linux, and on Windows 10 (with tweaks)
+- only comfirmed to work on firefox 120 on linux, and on Windows 10 (with tweaks)
     - tested on some forks, and ESR or anything based on it (waterfox, floorp) does not work
-    - the firefox version must fully support the `:has()` css selector
+    - the firefox version must fully support the `:has()` selector and css nesting
 - best used with sidebery but I guess can be used with Tree Style Tab, didn't test tho
 - not guaranteed to be 100% working out of the box, you might need to tweak it some
-- probably doesn't work with mac window buttons idk
+- probably doesn't work on macOS
 
 (for some more info and warnings see the comments in `chrome/userChrome.css`)
