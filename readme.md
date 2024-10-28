@@ -1,3 +1,6 @@
+
+> **tbh** I'm not even using this theme anymore, so not really up to date if it is broken in any new version of firefox or the like, am using (and ro recomend) the [ShyFox](https://github.com/Naezr/ShyFox) theme right now, and am also looking into the Zen browser. I'd still like to keep this still working and maybe adding minor things, but not too commited to it (also with my limited time from life and other projects)
+
 # arcticfox theme
 a theme for Firefox (and Sidebery, because it fancy) to make it look and somewhat behave like Arc browser on mac (rev 1)  
 ![scrrenshot](arcticfox-screenshot.png)  
